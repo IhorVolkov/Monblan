@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- Special version of Bootstrap that only affects content wrapped in .bootstrap-iso -->
+    <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+
+    <!--Font Awesome (added because you use icons in your prepend/append)-->
+    <link
+      rel="stylesheet"
+      href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css"
+    />
+
+    <!-- Inline CSS based on choices in "Settings" tab -->
+    <style>
+      .bootstrap-iso .formden_header h2,
+      .bootstrap-iso .formden_header p,
+      .bootstrap-iso form {
+        font-family: Arial, Helvetica, sans-serif;
+        color: black;
+      }
+      .bootstrap-iso form button,
+      .bootstrap-iso form button:hover {
+        color: white !important;
+      }
+      .asteriskField {
+        color: red;
+      }
+    </style>
+    <!-- Extra JavaScript/CSS added manually in "Settings" tab -->
+    <!-- Include jQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+    <!-- Include Date Range Picker -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"
+    />
+
+    <title>Monblan_Project</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div class="layout">
+        <header>
+          <div class="logo">
+            <a href="#"><img src="./img/logo.png" alt="logo"/></a>
+          </div>
+          <div class="profile">
+            <div class="projectname_start">
+              <h1>monblanproject</h1>
+              <a href="#">Start on 17-02-2016</a>
+            </div>
+            <div class="quantity_posts_followers">
+              <a href="#"><span>870</span> posts</a>
+              <a href="#"><span>11,787</span> followers</a>
+              <a href="#"><span>112</span> following</a>
+            </div>
+            <!-- Calendar -->
+            <!-- HTML Form (wrapped in a .bootstrap-iso div) -->
+            <div class="bootstrap-iso">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-10 col-sm-6 col-xs-6">
+                    <form class="form-horizontal" method="post">
+                      <div class="form-group ">
+                        <label class="control-label col-sm-1 requiredField" for="date">
+                          Date
+                        </label>
+                        <div class="col-sm-6">
+                          <div class="input-group">
+                            <input
+                              class="form-control"
+                              id="date"
+                              name="date"
+                              placeholder="MM/DD/YYYY"
+                              type="text"
+                            />
+
+                            <div class="input-group-addon">
+                              <i class="fa fa-close "></i>
+                            </div>
+
+                            <div class="input-group-addon">
+                              <i class="fa fa-calendar"> </i>
+                            </div>
+                          </div>
+                        </div>
+                        <!--repeat -->
+                        <div class="col-sm-6">
+                          <div class="input-group">
+                            <input
+                              class="form-control"
+                              id="date"
+                              name="date"
+                              placeholder="MM/DD/YYYY"
+                              type="text"
+                            />
+
+                            <div class="input-group-addon">
+                              <i class="fa fa-close "></i>
+                            </div>
+
+                            <div class="input-group-addon">
+                              <i class="fa fa-calendar" id="date"> </i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Script -->
+            <script>
+              $(document).ready(function() {
+                var date_input = $('input[name="date"]'); //our date input has the name "date"
+                var container =
+                  $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : 'body';
+                date_input.datepicker({
+                  format: 'mm/dd/yyyy',
+                  container: container,
+                  todayHighlight: true,
+                  autoclose: true,
+                });
+              });
+            </script>
+          </div>
+        </header>
+      </div>
+      <main>
+        <div class="layout">
+          <section class="first_line">
+            <div class="block_one">
+              <a href="#">
+                <img src="./img/block1.png" alt="paris" />
+              </a>
+              <div class="info_blocks">
+                <div class="today">
+                  <p>today</p>
+                  <p class="like one">128</p>
+                  <p></p>
+                  <p class="comment up">31</p>
+                </div>
+                <div class="date">
+                  <p class="dd_mm_yy">9-08-2016</p>
+                  <p class="like two">67</p>
+                  <p class="comment down">22</p>
+                </div>
+                <p class="uploaded">Image uploaded: 11-04-2016</p>
+              </div>
+            </div>
+            <div class="block_two">
+              <a href="#">
+                <img src="./img/block2.png" alt="railway" />
+              </a>
+              <div class="info_blocks">
+                <div class="today">
+                  <p>today</p>
+                  <p class="like one">12,800</p>
+                  <p></p>
+                  <p class="comment up">3,100</p>
+                </div>
+                <div class="date">
+                  <p class="dd_mm_yy">9-08-2016</p>
+                  <p class="like two">67</p>
+                  <p class="comment down">22</p>
+                </div>
+                <p class="uploaded">Image uploaded: 11-04-2016</p>
+              </div>
+            </div>
+            <div class="block_three">
+              <a href="#">
+                <img src="./img/block3.png" alt="work" />
+              </a>
+              <div class="info_blocks">
+                <div class="today">
+                  <p>today</p>
+                  <p class="like one">128</p>
+                  <p></p>
+                  <p class="comment up">31</p>
+                </div>
+                <div class="date">
+                  <p class="dd_mm_yy">9-08-2016</p>
+                  <p class="play two">67</p>
+                  <p class="comment down">22</p>
+                </div>
+                <p class="uploaded">Image uploaded: 11-04-2016</p>
+              </div>
+            </div>
+          </section>
+          <section class="second_line">
+            <div class="block_four">
+              <a href="#">
+                <img src="./img/block4.png" alt="sun" />
+              </a>
+              <div class="info_blocks">
+                <div class="today">
+                  <p>today</p>
+                  <p class="like one">128</p>
+                  <p></p>
+                  <p class="comment up">31</p>
+                </div>
+                <div class="date">
+                  <p class="dd_mm_yy">9-08-2016</p>
+                  <p class="like two">67</p>
+                  <p class="comment down">22</p>
+                </div>
+                <p class="uploaded">Image uploaded: 11-04-2016</p>
+              </div>
+            </div>
+            <div class="block_five">
+              <a href="#">
+                <img src="./img/block5.png" alt="smiles" />
+              </a>
+              <div class="info_blocks">
+                <div class="today">
+                  <p>today</p>
+                  <p class="like one">128</p>
+                  <p></p>
+                  <p class="comment up">31</p>
+                </div>
+                <div class="date">
+                  <p class="dd_mm_yy">9-08-2016</p>
+                  <p class="play two">67</p>
+                  <p class="play down">22</p>
+                </div>
+                <p class="uploaded">Image uploaded: 11-04-2016</p>
+              </div>
+            </div>
+            <div class="block_six">
+              <a href="#">
+                <img src="./img/block6.png" alt="nature" />
+              </a>
+              <div class="info_blocks">
+                <div class="today">
+                  <p>today</p>
+                  <p class="like one">128</p>
+                  <p></p>
+                  <p class="comment up">31</p>
+                </div>
+                <div class="date">
+                  <p class="dd_mm_yy">9-08-2016</p>
+                  <p class="like two">67</p>
+                  <p class="comment down">22</p>
+                </div>
+                <p class="uploaded">Image uploaded: 11-04-2016</p>
+              </div>
+            </div>
+          </section>
+          <section class="third_line">
+            <div class="block_seven">
+              <a href="#">
+                <img src="./img/block7.png" alt="stairs" />
+              </a>
+              <div class="info_blocks">
+                <div class="today">
+                  <p>today</p>
+                  <p class="like one">128</p>
+                  <p></p>
+                  <p class="comment up">31</p>
+                </div>
+                <div class="date">
+                  <p class="dd_mm_yy">9-08-2016</p>
+                  <p class="like two">67</p>
+                  <p class="comment down">22</p>
+                </div>
+                <p class="uploaded">Image uploaded: 11-04-2016</p>
+              </div>
+            </div>
+            <div class="block_eight">
+              <a href="#">
+                <img src="./img/block8.png" alt="girl" />
+              </a>
+              <div class="info_blocks">
+                <div class="today">
+                  <p class="like one">128</p>
+                  <p></p>
+                  <p class="comment up">31</p>
+                </div>
+                <div class="date">
+                  <p class="dd_mm_yy">9-08-2016</p>
+                  <p class="like two">67</p>
+                  <p class="comment down">22</p>
+                </div>
+                <p class="uploaded">Image uploaded: 11-04-2016</p>
+              </div>
+            </div>
+            <div class="block_nine">
+              <a href="#">
+                <img src="./img/block9.png" alt="dude" />
+              </a>
+              <div class="info_blocks">
+                <div class="today">
+                  <p>today</p>
+                  <p class="like one">128</p>
+                  <p></p>
+                  <p class="comment up">31</p>
+                </div>
+                <div class="date">
+                  <p class="dd_mm_yy">9-08-2016</p>
+                  <p class="like two">67</p>
+                  <p class="comment down">22</p>
+                </div>
+                <p class="uploaded">Image uploaded: 11-04-2016</p>
+              </div>
+            </div>
+          </section>
+          <button id="load_more">LOAD MORE</button>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
