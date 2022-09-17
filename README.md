@@ -1,3 +1,3 @@
 # Monblan-task
 
-https://ihorvolkov.github.io/monblan/
+https://ihorvolkov.github.io/Monblan/
